@@ -1,7 +1,7 @@
 {
-  "name": "@windmill/react-ui",
-  "version": "0.6.0",
-  "description": "React UI component library built with Tailwind CSS",
+  "name": "windmill-react-ui-kit",
+  "version": "0.7.0",
+  "description": "A fork of @windmill/react-ui with many upgrades.",
   "main": "dist/index.js",
   "files": [
     "lib",
@@ -101,15 +101,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/estevanmaito/windmill-react-ui.git"
+    "url": "https://github.com/ngduc/windmill-react-ui-kit.git"
   },
   "keywords": [],
-  "author": "Estevan Maito <ejmaito@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/estevanmaito/windmill-react-ui/issues"
+    "url": "https://github.com/ngduc/windmill-react-ui-kit/issues"
   },
-  "homepage": "https://github.com/estevanmaito/windmill-react-ui#readme",
+  "homepage": "https://github.com/ngduc/windmill-react-ui-kit#readme",
   "release-it": {
     "github": {
       "release": true
