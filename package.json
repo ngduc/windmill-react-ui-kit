@@ -1,6 +1,6 @@
 {
   "name": "windmill-react-ui-kit",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A fork of @windmill/react-ui with many upgrades.",
   "main": "dist/index.js",
   "files": [
