@@ -1,4 +1,13 @@
 export default {
+  text: {
+    base: 'block text-sm text-gray-700 dark:text-gray-400',
+    h1: 'text-6xl font-normal leading-normal mt-0 mb-2 text-gray-700 dark:text-gray-400',
+    h2: 'text-5xl font-normal leading-normal mt-0 mb-2 text-gray-700 dark:text-gray-400',
+    h3: 'text-4xl font-normal leading-normal mt-0 mb-2 text-gray-700 dark:text-gray-400',
+    h4: 'text-3xl font-normal leading-normal mt-0 mb-2 text-gray-700 dark:text-gray-400',
+    h5: 'text-2xl font-normal leading-normal mt-0 mb-2 text-gray-700 dark:text-gray-400',
+    h6: 'text-xl font-normal leading-normal mt-0 mb-2 text-gray-700 dark:text-gray-400',
+  },
   // Alert
   alert: {
     base: 'p-4 pl-12 relative rounded-lg leading-5',
