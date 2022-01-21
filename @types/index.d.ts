@@ -14,3 +14,5 @@ declare module '*.jpg' {
 declare type ListenerMap = {
   [k: string]: any
 }
+
+declare module 'classnames';
