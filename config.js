@@ -159,28 +159,14 @@ const maxHeight = (theme) => ({
 })
 
 const windmillConfig = {
-  darkMode: 'class',
-  purge: {
-    content: [
-      'node_modules/@windmill/react-ui/lib/defaultTheme.js',
-      'node_modules/@windmill/react-ui/dist/index.js',
-    ],
-  },
+  content: [
+    'node_modules/windmill-react-ui-kit/lib/defaultTheme.js',
+    'node_modules/windmill-react-ui-kit/dist/index.js',
+  ],
   theme: {
     colors,
     backgroundOpacity,
     maxHeight,
-  },
-  variants: {
-    backgroundOpacity: ['responsive', 'hover', 'focus', 'dark'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'odd', 'dark'],
-    display: ['responsive', 'dark'],
-    textColor: ['responsive', 'focus', 'focus-within', 'hover', 'active', 'dark'],
-    placeholderColor: ['responsive', 'focus', 'dark'],
-    borderColor: ['responsive', 'hover', 'focus', 'dark'],
-    divideColor: ['responsive', 'dark'],
-    boxShadow: ['responsive', 'hover', 'focus', 'dark'],
-    margin: ['responsive', 'last'],
   },
   plugins: [customFormsPlugin],
 }
@@ -198,15 +184,13 @@ function arrayMergeFn(destinationArray, sourceArray) {
  * @return {object} new config object
  */
 function wrapper(tailwindConfig) {
-  let purge
-  if (Array.isArray(tailwindConfig.purge)) {
-    purge = {
-      content: tailwindConfig.purge,
-    }
-  } else {
-    purge = tailwindConfig.purge
+  let content
+
+  if (Array.isArray(tailwindConfig.content)) {
+    content = tailwindConfig.content
   }
-  return deepMerge({ ...tailwindConfig, purge }, windmillConfig, { arrayMerge: arrayMergeFn })
+
+  return deepMerge({ ...tailwindConfig, content }, windmillConfig, { arrayMerge: arrayMergeFn })
 }
 
 module.exports = wrapper
