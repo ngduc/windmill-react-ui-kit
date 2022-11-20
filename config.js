@@ -160,10 +160,10 @@ const maxHeight = (theme) => ({
 
 const windmillConfig = {
   darkMode: 'class',
-  purge: {
-    content: [
-      'node_modules/@windmill/react-ui/lib/defaultTheme.js',
-      'node_modules/@windmill/react-ui/dist/index.js',
+  content: {
+    files: [
+      'node_modules/windmill-react-ui-kit/lib/defaultTheme.js',
+      'node_modules/windmill-react-ui-kit/dist/index.js',
     ],
   },
   theme: {
@@ -198,15 +198,15 @@ function arrayMergeFn(destinationArray, sourceArray) {
  * @return {object} new config object
  */
 function wrapper(tailwindConfig) {
-  let purge
-  if (Array.isArray(tailwindConfig.purge)) {
-    purge = {
-      content: tailwindConfig.purge,
+  let content
+  if (Array.isArray(tailwindConfig.content)) {
+    content = {
+      files: tailwindConfig.content,
     }
   } else {
-    purge = tailwindConfig.purge
+    content = tailwindConfig.content
   }
-  return deepMerge({ ...tailwindConfig, purge }, windmillConfig, { arrayMerge: arrayMergeFn })
+  return deepMerge({ ...tailwindConfig, content }, windmillConfig, { arrayMerge: arrayMergeFn })
 }
 
 module.exports = wrapper

@@ -1,6 +1,6 @@
 {
   "name": "windmill-react-ui-kit",
-  "version": "0.7.4",
+  "version": "0.8.4",
   "description": "A fork of @windmill/react-ui with many upgrades.",
   "main": "dist/index.js",
   "files": [
@@ -32,7 +32,7 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "tailwindcss": ">=2.0.0"
+    "tailwindcss": ">=3.0.0"
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.0",

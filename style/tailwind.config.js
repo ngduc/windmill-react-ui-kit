@@ -1,10 +1,10 @@
 const windmill = require('../config')
 
 module.exports = windmill({
-  purge: ["./src/**/*.{html,js,ts,tsx}"],
+  purge: ['./src/**/*.{html,js,ts,tsx}'],
   // purge: [],
   theme: {
-    extend: {}
+    extend: {},
   },
   variants: {},
   plugins: [
@@ -13,6 +13,6 @@ module.exports = windmill({
       strategy: 'class',
     }),
     require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio')
+    require('@tailwindcss/aspect-ratio'),
   ],
 })
