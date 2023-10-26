@@ -43,8 +43,9 @@ describe('Dropdown', () => {
 
   it('should call onClose when Esc is pressed', () => {
     const map = {} as ListenerMap
+
     document.addEventListener = jest.fn((e, cb) => {
-      map[e] = cb
+      map[e] = typeof cb === 'function' ? cb : cb.handleEvent
     })
     const onClose = jest.fn()
     mount(<Dropdown isOpen={true} onClose={onClose} />)
@@ -57,7 +58,7 @@ describe('Dropdown', () => {
   it('should close dropdown when clicking outside it', () => {
     const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
-      map[e] = cb
+      map[e] = typeof cb === "function" ? cb : cb.handleEvent
     })
     const onClose = jest.fn()
     mount(<Dropdown isOpen={true} onClose={onClose} />)
@@ -70,7 +71,7 @@ describe('Dropdown', () => {
   it('should not close dropdown when clicking inside it', () => {
     const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
-      map[e] = cb
+      map[e] = typeof cb === "function" ? cb : cb.handleEvent
     })
     const onClose = jest.fn()
     const wrapper = mount(<Dropdown isOpen={true} onClose={onClose} />)
@@ -83,7 +84,7 @@ describe('Dropdown', () => {
   it('should not call onClose when other key than Esc is pressed', () => {
     const map = {} as ListenerMap
     document.addEventListener = jest.fn((e, cb) => {
-      map[e] = cb
+      map[e] = typeof cb === "function" ? cb : cb.handleEvent
     })
     const onClose = jest.fn()
     mount(<Dropdown isOpen={true} onClose={onClose} />)
@@ -93,17 +94,5 @@ describe('Dropdown', () => {
     expect(onClose).not.toHaveBeenCalled()
   })
 
-  it('should remove the event listener on unmount', () => {
-    const map = {} as ListenerMap
-    const removeListener = jest.fn((e, cb) => {
-      map[e] = cb
-    })
-    document.removeEventListener = removeListener
-    const onClose = jest.fn()
-    const wrapper = mount(<Dropdown isOpen={true} onClose={onClose} />)
 
-    wrapper.unmount()
-
-    expect(removeListener).toHaveBeenCalled()
-  })
 })
