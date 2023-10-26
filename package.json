@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "prepare": "npm run build",
+    "prepack": "npm run build",
     "prebuild": "rimraf dist lib && npm run build:lib && npm run build:ts",
     "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
     "build:tailwind": "tailwindcss -i style/tailwind.css -o style/output.css -c style/tailwind.config.js --minify",
