@@ -16,7 +16,7 @@ const DropdownItem = React.forwardRef<Ref, ButtonProps>(function DropdownItem(pr
 
   return (
     <li className={baseStyle}>
-      <Button layout="__dropdownItem" ref={ref} {...other}>
+      <Button layout="__dropdownItem" ref={ref as React.Ref<HTMLButtonElement>} {...other}>
         {children}
       </Button>
     </li>
