@@ -1,6 +1,6 @@
 {
-  "name": "windmill-react-ui-kit-react18",
-  "version": "2.0.0",
+  "name": "windmill-react-ui-kit",
+  "version": "0.7.4",
   "description": "A fork of @windmill/react-ui with many upgrades.",
   "main": "dist/index.js",
   "files": [
@@ -11,7 +11,6 @@
   ],
   "scripts": {
     "prepare": "npm run build",
-    "prepack": "npm run build",
     "prebuild": "rimraf dist lib && npm run build:lib && npm run build:ts",
     "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
     "build:tailwind": "tailwindcss -i style/tailwind.css -o style/output.css -c style/tailwind.config.js --minify",
