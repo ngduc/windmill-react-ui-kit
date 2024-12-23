@@ -50,7 +50,7 @@ describe('PageButton', () => {
 
   it('should render the right page', () => {
     const onClick = () => {}
-    const expected = 1
+    const expected = "1"
     const wrapper = mount(<PageButton isActive page={1} onClick={onClick} />)
 
     expect(wrapper.find('button').text()).toContain(expected)
