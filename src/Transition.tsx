@@ -6,7 +6,7 @@ import { CSSTransition as ReactCSSTransition } from 'react-transition-group'
 
 interface TransitionContext {
   parent: {
-    appear?: string
+    appear?: boolean
     show?: boolean
     isInitialRender?: boolean
   }
@@ -32,7 +32,7 @@ interface TransitionProps {
   leave?: string
   leaveFrom?: string
   leaveTo?: string
-  appear?: string
+  appear?: boolean
 }
 
 const CSSTransition: React.FC<TransitionProps> = function CSSTransition({
